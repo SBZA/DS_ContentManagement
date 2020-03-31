@@ -15,7 +15,7 @@ export class TemplateService {
   getUrl = 'get';
   createUrl = 'create';
   deleteUrl = 'delete';
-  getWithIDUrl = 'id/ ';
+  getWithIDUrl = 'id/';
   requestUrl = '';
 
   httpOptions = {
@@ -39,7 +39,8 @@ export class TemplateService {
 
   getTemplateWithID(id: string) {
     this.resetRequestUrl();
-    this.requestUrl = this.baseUrl + this.getWithIDUrl + id;
+    this.requestUrl = this.baseUrl + this.getWithIDUrl + id.trim();
+    console.log('Request is ' + this.requestUrl);
     return this.http.get(this.requestUrl, this.httpOptions);
   }
 
