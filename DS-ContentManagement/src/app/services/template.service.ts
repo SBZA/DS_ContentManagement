@@ -9,7 +9,19 @@ import { Template } from 'src/models/template';
 })
 
 export class TemplateService {
-
+  private initialTemp: Template = {
+    adapter_id: '',
+    description: '',
+    document_class: '',
+    fn_guid: '',
+    object_store: '',
+    prod_id: '',
+    repository_id: '',
+    sb_guid: '',
+    template_def_id: '',
+    template_name: '',
+    version: ''
+  };
 
   baseUrl = 'https://content-domain-dev.app.ose.standardbank.co.za/content-management-config-service/templates/';
   getUrl = 'get';
@@ -52,8 +64,8 @@ export class TemplateService {
 
   deleteTemplate(template) {
     this.resetRequestUrl();
-    this.requestUrl = this.baseUrl + this.createUrl;
-    return this.http.delete(this.requestUrl, template);
+    this.requestUrl = this.baseUrl + this.deleteUrl;
+    return this.http.post(this.requestUrl, template);
   }
 
   resetRequestUrl() {
@@ -74,5 +86,9 @@ export class TemplateService {
     // return an observable with a user-facing error message
     return throwError(
       'Something bad happened; please try again later.');
-  };
+  }
+
+  initializeTemplate() {
+    return this.initialTemp;
+  }
 }

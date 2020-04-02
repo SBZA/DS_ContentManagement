@@ -1,15 +1,37 @@
-<div class="example-container">
-  <mat-form-field appearance="fill">
-    <mat-label>Enter your password</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'">
-    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-    </button>
-  </mat-form-field>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Amount</mat-label>
-    <input matInput type="number" class="example-right-align">
-    <span matPrefix>$&nbsp;</span>
-    <span matSuffix>.00</span>
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Template Description</mat-label>
+    <input value="{{template.description}}"
+    matInput placeholder="Placeholder"
+    [(ngModel)]='template.description'>
+    <mat-hint>Hint</mat-hint>
   </mat-form-field>
-</div>
+</p>
+
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Template Definition ID</mat-label>
+    <input matInput placeholder="Placeholder"
+    value="{{template.template_def_id}}"
+    [(ngModel)]='template.template_def_id'>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field appearance="outline">
+    <mat-label>Document Class</mat-label>
+    <input value="{{template.document_class}}"
+    matInput placeholder="Placeholder"
+    [(ngModel)]='template.document_class'>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+</p>
+
+<button mat-raised-button (click)='update()'>Update Template</button>
+<button mat-flat-button routerLink='/templates'>Cancel</button>
+<button mat-raised-button (click)='delete()'>Delete Template</button>
+
+
+
