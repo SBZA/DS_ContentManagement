@@ -18,7 +18,9 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-
+import {MatCardModule} from '@angular/material/card';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,13 +32,16 @@ import {MatButtonModule} from '@angular/material/button';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule,
     MatInputModule,
     MatButtonModule,
     HttpClientModule,
     MatTableModule,
+    MatIconModule,
+    MatSidenavModule,
     MatPaginatorModule,
     MatFormFieldModule,
-
+    MatCardModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],

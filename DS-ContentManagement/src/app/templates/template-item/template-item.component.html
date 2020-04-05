@@ -1,37 +1,44 @@
+<div class="main-div">
+  <mat-card class = "tp-card">
+    <mat-card-header>
+       <div mat-card-avatar>
+        <mat-icon aria-hidden="false">assignment</mat-icon>
+       </div>
+       <mat-card-title>Template Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+     <p>
+       <mat-form-field appearance="outline">
+         <mat-label>Template Description</mat-label>
+         <input value="{{template.description}}"
+         matInput placeholder="Placeholder"
+         [(ngModel)]='template.description'>
+       </mat-form-field>
+     </p>
 
-<p>
-  <mat-form-field appearance="outline">
-    <mat-label>Template Description</mat-label>
-    <input value="{{template.description}}"
-    matInput placeholder="Placeholder"
-    [(ngModel)]='template.description'>
-    <mat-hint>Hint</mat-hint>
-  </mat-form-field>
-</p>
-
-<p>
-  <mat-form-field appearance="outline">
-    <mat-label>Template Definition ID</mat-label>
-    <input matInput placeholder="Placeholder"
-    value="{{template.template_def_id}}"
-    [(ngModel)]='template.template_def_id'>
-    <mat-hint>Hint</mat-hint>
-  </mat-form-field>
-</p>
-
-<p>
-  <mat-form-field appearance="outline">
-    <mat-label>Document Class</mat-label>
-    <input value="{{template.document_class}}"
-    matInput placeholder="Placeholder"
-    [(ngModel)]='template.document_class'>
-    <mat-hint>Hint</mat-hint>
-  </mat-form-field>
-</p>
-
-<button mat-raised-button (click)='update()'>Update Template</button>
-<button mat-flat-button routerLink='/templates'>Cancel</button>
-<button mat-raised-button (click)='delete()'>Delete Template</button>
+     <p>
+       <mat-form-field appearance="outline">
+         <mat-label>Template Definition ID</mat-label>
+         <input matInput placeholder="Placeholder"
+         value="{{template.template_def_id}}"
+         [(ngModel)]='template.template_def_id'>
+       </mat-form-field>
+     </p>
 
 
-
+     <p>
+       <mat-form-field appearance="outline">
+         <mat-label>Document Class</mat-label>
+         <input value="{{template.document_class}}"
+         matInput placeholder="Placeholder"
+         [(ngModel)]='template.document_class'>
+       </mat-form-field>
+     </p>
+    </mat-card-content>
+    <mat-card-actions>
+     <button mat-raised-button (click)='update()'>Update Template</button>
+     <button mat-raised-button (click)="openDialog()">Delete Template</button>
+     <button mat-flat-button routerLink='/templates'>Cancel</button>
+    </mat-card-actions>
+ </mat-card>
+</div>

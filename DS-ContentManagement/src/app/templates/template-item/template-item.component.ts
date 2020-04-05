@@ -3,11 +3,13 @@ import { ActivatedRoute, Params, RouterOutlet, Router } from '@angular/router';
 import { TemplateService } from 'src/app/services/template.service';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Template } from 'src/models/template';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-template-item',
   templateUrl: './template-item.component.html',
-  styleUrls: ['./template-item.component.css']
+  styleUrls: ['./template-item.component.css'],
 })
 export class TemplateItemComponent implements OnInit {
   templateID: string;
@@ -22,7 +24,8 @@ export class TemplateItemComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private templateService: TemplateService,
-    fb: FormBuilder
+    private fb: FormBuilder,
+    public dialog: MatDialog
     ) {
       this.options = fb.group({
         hideRequired: this.hideRequiredControl,
@@ -65,4 +68,20 @@ export class TemplateItemComponent implements OnInit {
       }
     );
   }
+  openDialog() {
+    const dialogRef = this.dialog.open(TemplateItemDeleteDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+}
+
+@Component({
+  selector: 'template-item-delete-item-dialog',
+  templateUrl: 'template-item-delete-item-dialog.html',
+})
+export class TemplateItemDeleteDialogComponent {
+
+  constructor() {}
 }
