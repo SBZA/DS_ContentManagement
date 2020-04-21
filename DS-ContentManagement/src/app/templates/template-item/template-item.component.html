@@ -35,3 +35,22 @@
 
 
 
+<<<<<<< Updated upstream
+=======
+     <p>
+       <mat-form-field appearance="outline">
+         <mat-label>Document Class</mat-label>
+         <input value="{{template.document_class}}"
+         matInput placeholder="Placeholder"
+         [(ngModel)]='template.document_class'>
+       </mat-form-field>
+     </p>
+    </mat-card-content>
+    <mat-card-actions>
+     <button mat-raised-button (click)='update()'>Update Template</button>
+     <button mat-raised-button (click)="delete()">Delete Template</button>
+     <button mat-flat-button routerLink='/templates'>Cancel</button>
+    </mat-card-actions>
+ </mat-card>
+</div>
+>>>>>>> Stashed changes

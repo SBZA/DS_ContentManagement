@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { ActivatedRoute, Params, RouterOutlet, Router } from '@angular/router';
 import { TemplateService } from 'src/app/services/template.service';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Template } from 'src/models/template';
+<<<<<<< Updated upstream
+=======
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+>>>>>>> Stashed changes
 
 @Component({
   selector: 'app-template-item',
@@ -65,4 +69,34 @@ export class TemplateItemComponent implements OnInit {
       }
     );
   }
+<<<<<<< Updated upstream
+=======
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialogComponent, {
+      width: '350px',
+      data: "Do you confirm the deletion of this data?"
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        console.log('Yes clicked');
+        // DO SOMETHING
+      }
+    });
+  }
+}
+
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'template-item-delete-item-dialog.html',
+})
+export class DialogOverviewExampleDialogComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialogComponent>) {}
+    onNoClick(): void {
+      this.dialogRef.close();
+    }
+
+>>>>>>> Stashed changes
 }

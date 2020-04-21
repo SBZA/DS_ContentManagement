@@ -18,6 +18,13 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+<<<<<<< Updated upstream
+=======
+import {MatCardModule} from '@angular/material/card';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatSortModule} from '@angular/material/sort';
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
@@ -35,6 +42,7 @@ import {MatButtonModule} from '@angular/material/button';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
+    MatSortModule,
     MatFormFieldModule,
 
     AppRoutingModule,
